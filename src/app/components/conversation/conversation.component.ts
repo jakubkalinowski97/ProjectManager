@@ -13,7 +13,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('openClose', [
       state('open', style({
-        height: '200px',
+        height: '*',
         opacity: '1'
       })),
       state('close', style({
@@ -76,6 +76,7 @@ export class ConversationComponent implements OnInit {
   sendMessage(newConv: boolean) {
     if (newConv) {
       this.newConvMessage.postDate = this.formatDate(new Date());
+      this.newConversation.creationDate = this.formatDate(new Date());
       this.conversationService.sendMessage(this.newConvMessage).subscribe(_ => {
         this.getConversations();
       });
@@ -117,7 +118,6 @@ export class ConversationComponent implements OnInit {
     const hours = ('0' + date.getHours()).slice(-2);
     const minutes = ('0' + date.getMinutes()).slice(-2);
     const seconds = ('0' + date.getSeconds()).slice(-2);
-    console.log(('0' + date.getSeconds()).slice(-2));
     const formatedDate = year + '-' + month + '-' + day + '-' + hours + '-' + minutes + '-' + seconds;
     return formatedDate;
   }

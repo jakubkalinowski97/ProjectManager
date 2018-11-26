@@ -178,6 +178,7 @@ input::placeholder{
     justify-content: flex-start;
     width: 100%;
     padding: 10px;
+    height: 60px;
     background: #72a7e47a;
     transition: 0.2s;
     border-bottom: 1px solid #72a7e4b7;
@@ -284,3 +285,4 @@ input::placeholder{
 .last-conversation-title{
     padding-top: 10px;
 }
+
