@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="header-main">
+      <div class="header-text">
+        <h1>New messages</h1>
+      </div>
+      <div class="header">
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="data-messages">
+        <div class="unread-messages">
+          <div *ngIf="unreadMessages">
+            <div class="unread-messages-header">
+              You have unread messages
+            </div>
+            <div class="no-unread-messages">
+              {{unreadMessages.length}}
+            </div>
+          </div>
+          <div *ngIf="!unreadMessages" class="no-unread-messages">
+            No messages
+          </div>
+        </div>
+      </div>
+      <div class="messages">
+        <div class="messages-header">
+          <span>Unread messages</span>
+        </div>
+        <div class="messages-body" *ngFor="let message of unreadMessages">
+          <app-message [message]="message"></app-message>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="menu-container">
+  <nav class="menu">
+    <a class="menu-item" routerLink="/newMessages" routerLinkActive="menu-active">
+      <i class="fas fa-envelope"></i>
+      <span>New messages</span>
+    </a>
+    <a class="menu-item" routerLink="/conversations" routerLinkActive="menu-active">
+      <i class="fas fa-comments"></i>
+      <span>Conversations</span>
+    </a>
+    <a class="menu-item" routerLink="/user/id" routerLinkActive="menu-active">
+      <i class="fas fa-user"></i>
+      <span>Profile</span>
+    </a>
+    <a class="menu-item" (click)="this.auth.logout()" routerLink="/login" routerLinkActive="menu-active">
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
+    </a>  
+  </nav>
+</div>

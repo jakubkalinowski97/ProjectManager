@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="header-main">
+      <div class="header-text">
+        <h1>User Profile</h1>
+      </div>
+      <div class="header">
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="data-person">
+        <div class="photo">
+          <img src="src/assets/user.svg">
+        </div>
+        <div class="data-text">
+          <span class="name">{{this.user.name}} {{this.user.surname}}</span>
+          <span class="phone">{{this.user.phone}}</span>
+          <div class="roles">
+            <span class="role-header">Your roles</span>
+            <ul *ngFor="let role of this.user.roles">
+              <li class="role">{{role.roleName}}</li>
+            </ul>
+          </div>
+          <div class="sent-messages">
+            <span class="sent-messages-header">Your conversations</span>
+            <span class="sent-messages-number">{{this.conversationService.allConversations.length}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="edit-person-data">
+        <div class="edit-person-data-header">
+          <span>Edit your person data</span>
+        </div>
+        <!-- <div class="columns">
+        <div class="column">
+            <input class="edit-input" type="text" [(ngModel)]="this.user.name" placeholder="Name">
+            <input class="edit-input" type="text" [(ngModel)]="this.user.surname" placeholder="Surname">
+        </div>
+        <div class="column">
+            <input class="edit-input" type="text" [(ngModel)]="this.user.phone" placeholder="Phone">
+            <div class="checkboxes">
+              <div class="checkbox-container">
+                <input class="checkbox" type="checkbox" [checked]="isDev" (change)="isDev = !isDev; addRoleOfDev()">
+                <span>Developer</span>
+              </div>
+              <div class="checkbox-container">
+                <input class="checkbox" type="checkbox" [checked]="isTester" (change)="isTester = !isTester; addRoleOfTester()">
+                <span>Tester</span>
+              </div>
+            </div>
+        </div>
+      </div>
+      <button (click)="editUser()" class="btn-edit">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>

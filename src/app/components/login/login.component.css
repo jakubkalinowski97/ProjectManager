@@ -1,0 +1,131 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: rgb(250, 250, 250);
+}
+.wrapper {
+    position: relative;
+    top: 10%;
+    margin: 0 auto;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid rgb(28, 37, 65);
+    overflow: hidden;
+    box-shadow: 10px 10px 20px #cccccc;
+}
+
+.login-form{
+    z-index: 10;
+    width: 40%;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input::placeholder{
+    color: #3c6a8536;
+    z-index: 10;
+}
+
+.login-input{
+    outline: none;
+    z-index: 10;
+    width: 100%;
+    padding: 7px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background:  #72a7e47a;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.login-input:hover{
+    background: #5BC0BE;
+    transition: 0.2s;
+}
+
+.login-input:focus{
+    background: #5BC0BE;
+}
+
+.login-header{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-text{
+    z-index: 10;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    margin-top: 20px;
+    color: #6f97c4c5;
+}
+
+.header-sub{
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #6f97c4;
+}
+
+.login-header-user{
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.header-background{
+    position: absolute;
+    background: #1c2541;
+    height: 800px;
+    width: 900px;
+    border-radius: 60%;
+    top: -645px;
+}
+
+.btn-login{
+    width: 100%;
+    border: none;
+    background: #1c2541;
+    height: 70px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #84aad6c5;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-login:hover{
+    background: #5BC0BE;
+    border-bottom: 1px solid #5BC0BE;
+    transition: 0.2s;
+    color: #1c2541;
+    cursor: pointer;
+}
+
+.registration{
+    padding: 10px;
+}
+
+.registration span{
+        transition: 0.2s;
+}
+
+.registration span:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: #5BC0BE;
+}
+

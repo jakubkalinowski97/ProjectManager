@@ -1,0 +1,49 @@
+@import '../../../styles.css';
+
+.menu-container{
+    z-index: 100;
+    width: 110px;
+    height: 100vh;
+    background: rgb(28,37,65);
+    background: linear-gradient(151deg, rgba(28,37,65,1) 40%, rgba(11,19,43,1) 100%);
+    color: #ffffff;
+    position: fixed;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 10px 0;
+    transition: 0.2s;
+    border-bottom: 1px solid var(--color-dark-blue);
+}
+
+.menu-item:last-of-type{
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+.menu-item:hover{
+    background: #5BC0BE;
+    border-bottom: 1px solid #5BC0BE;
+}
+
+.menu-active{
+    background: #5BC0BE;
+    border-bottom: 1px solid #5BC0BE;
+}
+
+.fas{
+    padding: 5px;
+    font-size: 20px;
+}

@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="header-main">
+      <div class="header-text">
+        <h1>Conversations</h1>
+      </div>
+      <div class="header">
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="last-conversations">
+        <div class="new-conversation">
+          <span class="new-conv-message-title" (click)="toggleNewConversation()">New conversation</span>
+          <div [@openClose]="toggleNewConv ? 'open' : 'close'" class="new-conv-message-inputs">
+            <input class="message-input new-conv-message-input" [ngClass]="{'closed-input': !toggleNewConv}" type="text" placeholder="Email..." [(ngModel)]="newConvMessage.recipientEmail">
+            <input class="message-input new-conv-message-input" [ngClass]="{'closed-input': !toggleNewConv}" type="text" placeholder="Title..." [(ngModel)]="newConversation.title">
+            <input class="message-input new-conv-message-input" [ngClass]="{'closed-input': !toggleNewConv}" type="textarea" placeholder="Message..." [(ngModel)]="newConvMessage.body">
+            <button class="new-conv-message-btn" [ngClass]="{'closed-input': !toggleNewConv}" (click)="createConversation()">
+              Send
+            </button>
+          </div>
+        </div>
+        <div>
+          <span class="last-conversation-title">Last conversations</span>
+        </div>
+        <div class="recent-conversations">
+          <div *ngFor="let conversation of this.conversationService.allConversations">
+            <div class="conversation-item" (click)="selectConversation(conversation.id)">
+              <div class="data-last-message">
+                {{conversation.creationDate}}
+              </div>
+              <div class="conversation-title">
+                {{conversation.title}}
+              </div>
+              <!-- <div class="last-message">
+                    //takeLastMessage(conversation.id)
+                  </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="conversations">
+        <div class="conversations-header">
+          <span>Your conversation</span>
+        </div>
+        <div class="conversations-message">
+          <div *ngFor="let message of this.currentConv?.messages">
+            <app-message [message]="message"></app-message>
+          </div>
+        </div>
+        <div *ngIf="this.currentConv" class="new-message-container">
+          <input class="message-input" type="text" placeholder="Twoja wiadmość..." [(ngModel)]="newMessage.body">
+          <button class="btn-message" (click)="sendMessage()">
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

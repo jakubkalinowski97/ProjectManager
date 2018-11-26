@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 45%;
+}
+
+.message-left {
+    background: rgb(230, 230, 230);
+    border-bottom-left-radius: 0;
+}
+
+.message-right {
+    background: #779EAE;
+    border-bottom-right-radius: 0;
+}
+
+.data-right {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 5px 0 5px;
+    font-size: 10px;
+    color: #00000065;
+    position: relative;
+}
+
+.data-left{
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 5px 0 5px;
+    font-size: 10px;
+    color: #00000065;
+    position: relative;
+}
+
+.left { 
+    justify-content: flex-start;
+}
+
+.right{
+    justify-content: flex-end;
+}
+
+.email{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 5px 0 5px;
+    font-size: 12px;
+    color: #00000065;
+    position: relative;
+}
+
+

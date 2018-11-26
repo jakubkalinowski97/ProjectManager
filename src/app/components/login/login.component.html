@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="login-header">
+      <div class="header-background"></div>
+      <span class="header-text">Welcome!</span>
+      <span class="header-sub" >Sign in on your account</span>
+      <img class="login-header-user" src="src/assets/user.svg">
+    </div>
+      <div class="login-form">
+        <label for="user">
+        </label>
+        <input class="login-input" type="text" id="username" [(ngModel)]="this.username" placeholder="Login">
+        <label for="password">
+        </label>
+        <input class="login-input" type="password" id="password" [(ngModel)]="this.password" placeholder="Password">
+      </div>
+      <button class="btn-login" (click)="login(this.username, this.password)">
+        Sign in
+      </button>
+      <div class="registration">
+        <span routerLink = '/register'>No account? Sign on!</span>
+      </div>
+  </div>
+</div>

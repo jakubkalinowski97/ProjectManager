@@ -1,0 +1,23 @@
+:root{
+    --color-dark-blue:  #0B132B;
+    --color-dark-blue1: #1C2541;
+    --color-gray:       #3A506B;
+    --color-light-blue: #5BC0BE;
+    --color-light-blue1:#6FFFE9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Lato', sans-serif;
+}
+
+a,
+a:visited,
+a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
