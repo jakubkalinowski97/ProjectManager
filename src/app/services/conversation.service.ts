@@ -38,9 +38,11 @@ export class ConversationService {
   }
 
   readMessage(msg): Observable<any> {
-    msg.read = 'true';
+    const isReadMsg = {
+      isRead: 'true'
+    };
     const url = this.checkReadMessagesUrl.replace('{id}', msg.id);
-    return this.http.put(url, JSON.stringify(msg), this.httpOptions);
+    return this.http.patch(url, JSON.stringify(isReadMsg), this.httpOptions);
   }
 
   getConversationsWithMessages(convId): Observable<any> {

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="header-main">
+      <div class="header-text">
+        <h1>Projects</h1>
+      </div>
+      <div class="header">
+      </div>
+    </div>
+    <div class="bottom">
+      <app-one-project [tileToCreateProject]='true' ></app-one-project>
+      <app-one-project *ngFor="let project of this.projectService.projects" [project]='project'
+        [tileToCreateProject]='false'></app-one-project>
+    </div>
+  </div>
+</div>

@@ -19,8 +19,7 @@ export class NewMessagesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.unreadMessages.forEach(msg => {
-      this.conversationService.readMessage(msg).subscribe( msgRead => {
-      });
+      this.conversationService.readMessage(msg).subscribe(_ => {});
     });
   }
 

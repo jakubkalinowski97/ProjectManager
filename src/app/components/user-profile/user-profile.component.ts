@@ -13,12 +13,6 @@ export class UserProfileComponent implements OnInit {
     name: '',
     surname: '',
     phone: '',
-    account: {
-      userId: '',
-      email: 'xxxi@gmail.com',
-      password: '1450575459',
-      active: true
-    },
     roles: [
     ]
   };
@@ -34,10 +28,6 @@ export class UserProfileComponent implements OnInit {
       this.user.name = data.name;
       this.user.surname = data.surname;
       this.user.phone = data.phone;
-      this.user.account.userId = data.account.userId;
-      this.user.account.email = data.account.email;
-      this.user.account.password = data.account.password;
-      this.user.account.active = data.account.active;
       data.roles.forEach(role => {
         this.user.roles.push({ 'roleName': role.roleName });
       });
@@ -70,10 +60,10 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  // editUser() {
-  //   this.userService.editUser(this.user).subscribe(_ => {
-  //     console.log(_);
-  //   });
-  // }
+  editUser() {
+    this.userService.editUser(this.user).subscribe(_ => {
+      console.log(_);
+    });
+  }
 
 }

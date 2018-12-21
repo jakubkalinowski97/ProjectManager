@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+.project-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #7ec4dd79;
+    border-radius: 10px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.project-container:hover{
+    transition: .2s;
+    background: #7ec4ddd3;
+}
+
+.new-project-container {
+    cursor: default;
+}
+
+.header-new-project {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.project-data-name{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.project-data-description {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+textarea::placeholder,
+input::placeholder{
+    font-family: 'Arial';
+    color: #3c6a85dc;
+    z-index: 10;
+}
+
+.project-input{
+    outline: none;
+    z-index: 10;
+    width: 100%;
+    padding: 7px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 20px;
+    background:  #72a7e47a;
+    font-size: 14px;
+    transition: 0.2s;
+    margin-bottom: 5px;
+}
+
+.project-input:hover{
+    background: #72a7e4b4;
+    transition: 0.2s;
+}
+
+.project-input:focus{
+    background: #72a7e4b4;
+}
+
+.btn-project {
+    position: relative;
+    bottom: 0px;
+    cursor: pointer;
+    color: #FFFFFF;
+    outline: none;
+    z-index: 10;
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 20px;
+    background:  #1B2440;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-project:hover{
+    background: #5BC0BE;
+    transition: 0.2s;
+}

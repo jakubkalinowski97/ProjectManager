@@ -1,9 +1,9 @@
-<div class="container" [ngClass]="{'right': message.senderId === this.sharedService.userId, 'left': message.senderId != this.sharedService.userId}">
-  <div class="message" [ngClass]="{'message-right': message.senderId === this.sharedService.userId, 'message-left': message.senderId != this.sharedService.userId}">
+<div class="container" [ngClass]="{'right': message.senderEmail === this.sharedService.userEmail, 'left': message.senderEmail != this.sharedService.userEmail}">
+  <div class="message" [ngClass]="{'message-right': message.senderEmail === this.sharedService.userEmail, 'message-left': message.senderEmail !== this.sharedService.userEmail}">
     {{message.body}}
-    <div class="email" *ngIf="message.senderId != this.sharedService.userId">
-      {{senderEmail}}
+    <div class="email" *ngIf="message.senderEmail !== this.sharedService.userEmail">
+      {{message.senderEmail}}
     </div>
-    <div class="data" [ngClass]="{'data-right': message.senderId === this.sharedService.userId, 'data-left': message.senderId != this.sharedService.userId}">{{message.postDate}}</div>
+    <div class="data" [ngClass]="{'data-right': message.senderEmail === this.sharedService.userEmail, 'data-left': message.senderEmail !== this.sharedService.userEmail}">{{message.postDate}}</div>
   </div>
 </div>

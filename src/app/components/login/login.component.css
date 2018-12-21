@@ -1,7 +1,9 @@
 .container{
+    position: relative;
     height: 100vh;
     width: 100vw;
     background: rgb(250, 250, 250);
+    overflow: hidden;
 }
 .wrapper {
     position: relative;
@@ -11,9 +13,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: rgb(250, 250, 250);
     border: 2px solid rgb(28, 37, 65);
     overflow: hidden;
-    box-shadow: 10px 10px 20px #cccccc;
+    box-shadow: 0px 0px 30px #cccccc;
 }
 
 .login-form{
@@ -128,4 +131,3 @@ input::placeholder{
     transition: 0.2s;
     color: #5BC0BE;
 }
-

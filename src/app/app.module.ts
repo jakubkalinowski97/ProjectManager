@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -20,6 +20,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { OneProjectComponent } from './components/one-project/one-project.component';
 
 
 
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'user/:id', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'newMessages', component: NewMessagesComponent, canActivate: [AuthGuard] },
   { path: 'conversations', component: ConversationComponent, canActivate: [AuthGuard] },
+  { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
   { path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -50,7 +53,9 @@ const appRoutes: Routes = [
     LoginComponent,
     UserProfileComponent,
     RegistrationComponent,
-    NewMessagesComponent
+    NewMessagesComponent,
+    ProjectsComponent,
+    OneProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,8 @@ const appRoutes: Routes = [
     ),
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

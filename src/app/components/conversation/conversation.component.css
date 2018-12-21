@@ -103,7 +103,7 @@
 }
 
 input::placeholder{
-    color: #3c6a8536;
+    color: #3c6a85dc;
     z-index: 10;
 }
 
@@ -167,7 +167,7 @@ input::placeholder{
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: auto;
+    height: 100%;
 }
 
 .conversation-item{

@@ -1,0 +1,22 @@
+<div class="project-container new-project-container" *ngIf="tileToCreateProject">
+  <div class="header-new-project">New project</div>
+  <form [formGroup]='newProject'>
+    <label>
+      <input class="project-input" type="text" formControlName="name" placeholder="Project name...">
+    </label>
+    <label>
+      <textarea class="project-input" type="text" formControlName="description" placeholder="Project description..."
+        rows='4'></textarea>
+    </label>
+    <button class="btn-project" (click)="createProject()" [disabled]="!newProject.valid">Create</button>
+  </form>
+</div>
+<div class="project-container" *ngIf="!tileToCreateProject">
+  <label class="project-data-name">
+    <p>{{project.name}}</p>
+  </label>
+  <label >
+    Description:
+    <p class="project-data-description">{{project.description}}</p>
+  </label>
+</div>

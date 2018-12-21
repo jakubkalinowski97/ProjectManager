@@ -13,7 +13,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   animations: [
     trigger('openClose', [
       state('open', style({
-        height: '*',
+        height: '300px',
         opacity: '1'
       })),
       state('close', style({
@@ -33,35 +33,30 @@ export class ConversationComponent implements OnInit {
   toggleNewConv = false;
   newMessage = {
     'body': '',
-    'postDate': this.formatDate(new Date()),
-    'senderId': this.sharedService.userId,
+    'senderEmail': this.sharedService.userEmail,
     'recipientEmail': this.sharedService.currentReceiverEmail,
     'conversationId': this.sharedService.currentConversationId,
-    'read': false
+    'isRead': false
   };
 
   newConversation = {
     'title': '',
-    'creationDate': ''
   };
 
   newConvMessage = {
     'body': '',
-    'postDate': '',
-    'senderId': this.sharedService.userId,
-    'recipientEmail': '',
+    'senderEmail': this.sharedService.userEmail,
+    'recipientEmail': this.sharedService.currentReceiverEmail,
     'conversationId': '',
-    'read': false
+    'isRead': false
   };
 
   currentConv = null;
-  currentReceiverEmail = null;
 
   constructor(private userService: UserService, private sharedService: SharedService, private route: Router,
     private conversationService: ConversationService) { }
 
   ngOnInit() {
-    // getConversations => this.conversationService.conversations = nowe konwersacje
     this.getConversations();
   }
 
@@ -75,8 +70,6 @@ export class ConversationComponent implements OnInit {
 
   sendMessage(newConv: boolean) {
     if (newConv) {
-      this.newConvMessage.postDate = this.formatDate(new Date());
-      this.newConversation.creationDate = this.formatDate(new Date());
       this.conversationService.sendMessage(this.newConvMessage).subscribe(_ => {
         this.getConversations();
       });
@@ -84,7 +77,6 @@ export class ConversationComponent implements OnInit {
       this.newConvMessage.recipientEmail = '';
       this.newConversation.title = '';
     } else {
-      this.newMessage.postDate = this.formatDate(new Date());
       this.conversationService.sendMessage(this.newMessage).subscribe(_ => {
         this.getConversations();
       });
@@ -101,6 +93,9 @@ export class ConversationComponent implements OnInit {
           this.conversationService.conversationsWithMessages.push(convWithMsg);
         });
       });
+      if (this.conversationService.allConversations.length === 0) {
+        this.toggleNewConv = true;
+      }
     });
   }
 
@@ -127,23 +122,13 @@ export class ConversationComponent implements OnInit {
   }
 
   getReceiverEmail(convId) {
-    const tmpConv = this.conversationService.conversationsWithMessages.find(el => el.id === convId);
-    let message = tmpConv.messages.find(msg => {
-      return msg.recipientEmail !== this.sharedService.userEmail;
-    });
-    if (message) {
-      this.sharedService.currentReceiverEmail = message.recipientEmail;
-    } else {
-      message = tmpConv.messages.find(msg => {
-        return msg.senderId !== this.sharedService.userId;
-      });
-      this.getEmailByUserId(message.senderId);
-    }
-  }
-
-  getEmailByUserId(userId) {
-    this.userService.getUser(userId).subscribe(res => {
-      this.sharedService.currentReceiverEmail = res.account.email;
+    this.currentConv.messages.forEach(element => {
+      if (element.senderEmail !== this.sharedService.userEmail) {
+        this.sharedService.currentReceiverEmail = element.senderEmail;
+      } else {
+        this.sharedService.currentReceiverEmail = element.recipientEmail;
+      }
+      return;
     });
   }
 }

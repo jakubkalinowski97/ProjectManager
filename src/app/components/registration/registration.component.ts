@@ -15,11 +15,10 @@ export class RegistrationComponent implements OnInit {
     name: '',
     surname: '',
     phone: '',
-    birthDate: '1996-08-28-03-10-07',
     account: {
       password: '',
       email: '',
-      active: true
+      isActive: true
     },
     roles: [
     ]

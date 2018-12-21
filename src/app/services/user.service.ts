@@ -42,6 +42,6 @@ export class UserService {
 
   editUser(user): Observable<any> {
     const url = this.userUrl.replace('{id}', this.sharedService.userId) ;
-    return this.http.put(url, JSON.stringify(user), this.httpOptions);
+    return this.http.patch(url, JSON.stringify(user), this.httpOptions);
   }
 }
