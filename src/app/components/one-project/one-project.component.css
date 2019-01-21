@@ -11,6 +11,7 @@
     padding: 10px;
     background: #7ec4dd79;
     border-radius: 10px;
+    margin: 10px;
     transition: .2s;
     cursor: pointer;
 }
@@ -52,7 +53,7 @@
 
 textarea::placeholder,
 input::placeholder{
-    font-family: 'Arial';
+    font-family: 'Lato';
     color: #3c6a85dc;
     z-index: 10;
 }

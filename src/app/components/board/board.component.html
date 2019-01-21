@@ -1,3 +1,35 @@
-<p>
-  board works!
-</p>
+<!-- <div class="project-container new-project-container" *ngIf="tileToCreateTable">
+  <div class="header-new-project">New table</div>
+  <div [formGroup]='newTable'>
+    <label>
+      <input class="project-input" type="text" formControlName="name" placeholder="Table name...">
+    </label>
+    <button class="btn-project" (click)="createTable()" [disabled]="!newTable.valid">Create</button>
+  </div>
+</div>
+<div class="project-container" *ngIf="!tileToCreateTable">
+  <label class="project-data-name">
+    <p>{{table.name}}</p>
+  </label>
+</div> -->
+
+<div class="project-container" *ngIf="!tileToCreateTable">
+  <label class="project-data-name">
+    <p>High priority</p>
+  </label>
+</div>
+<div class="project-container" *ngIf="!tileToCreateTable">
+  <label class="project-data-name">
+    <p>Medium priority</p>
+  </label>
+</div>
+<div class="project-container" *ngIf="!tileToCreateTable">
+  <label class="project-data-name">
+    <p>Low priority</p>
+  </label>
+</div>
+<div class="project-container" *ngIf="!tileToCreateTable">
+  <label class="project-data-name">
+    <p>Done tasks</p>
+  </label>
+</div>

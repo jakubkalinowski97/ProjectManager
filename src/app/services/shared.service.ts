@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
 export class SharedService {
   userId: string;
   userEmail: string;
-  currentConversationId = '';
-  currentReceiverEmail = '';
+  currentConversationId = null;
+  currentReceiverEmail = null;
+  currentGroupId = null;
+  currentProjectId = null;
+  currentTableId = null;
   constructor() { }
 }

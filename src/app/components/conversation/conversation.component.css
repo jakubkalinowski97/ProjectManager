@@ -284,5 +284,17 @@ input::placeholder{
 
 .last-conversation-title{
     padding-top: 10px;
+    flex-direction: row;
+    position: relative;
+}
+
+.icon-sort {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-sort > i {
+    font-size: 14px;
 }
 

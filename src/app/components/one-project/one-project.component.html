@@ -12,11 +12,14 @@
   </form>
 </div>
 <div class="project-container" *ngIf="!tileToCreateProject">
-  <label class="project-data-name">
-    <p>{{project.name}}</p>
-  </label>
-  <label >
-    Description:
-    <p class="project-data-description">{{project.description}}</p>
-  </label>
+  <span (click)="deleteProject()">X</span>
+  <div (click)="selectProject()">
+    <label class="project-data-name">
+      <p>{{project.name}}</p>
+    </label>
+    <label >
+      Description:
+      <p class="project-data-description">{{project.description}}</p>
+    </label>
+  </div> 
 </div>

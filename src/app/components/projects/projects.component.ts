@@ -7,14 +7,14 @@ import { ProjectService } from '../../services/project.service';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  projects;
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+    this.projectService.allProjects.subscribe( projects => this.projects = projects );
     this.projectService.getProjects().subscribe(projects => {
-      this.projectService.projects = projects;
-      console.log(this.projectService.projects);
+      this.projectService.projects.next(projects);
     });
   }
-
 }

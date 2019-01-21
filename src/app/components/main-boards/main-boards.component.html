@@ -1,14 +1,49 @@
 <div class="container">
-    <div class="wrapper">
-      <div class="header-main">
-        <div class="header-text">
-          <h1>Projects</h1>
-        </div>
-        <div class="header">
-        </div>
+  <div class="wrapper">
+    <div class="header-main">
+      <div class="header-text">
+        <h1>{{project.name}}</h1>
       </div>
-      <div class="bottom">
-        
+      <div class="header">
+      </div>
+    </div>
+    <div class="bottom">
+      <!-- <app-board [tileToCreateTable]='true'></app-board> -->
+      <div class="table-container">
+        <div class="table">
+          <div class="search-task">
+            <div class="search-task-header">Search task</div>
+            <label>
+              <input class="project-input" type="text" [(ngModel)]="searchText">
+            </label>
+          </div>
+          <app-task class="task" [createNewTask]='true'></app-task>
+        </div>
+        <div class="table high-priority">
+          <p>High priority</p>
+          <div *ngFor="let task of this.projectService.highTasks | search : searchText">
+            <app-task [createNewTask]='false' [task]='task'></app-task>
+          </div>
+        </div>
+        <div class="table medium-priority">
+          <p>Medium priority</p>
+          <div *ngFor="let task of this.projectService.mediumTasks | search : searchText">
+            <app-task [createNewTask]='false' [task]='task'></app-task>
+          </div>
+        </div>
+        <div class="table low-priority">
+          <p>Low priority</p>
+          <div *ngFor="let task of this.projectService.lowTasks | search : searchText">
+            <app-task class="task" [createNewTask]='false' [task]='task'></app-task>
+          </div>
+        </div>
+        <div class="table done">
+          <p>Done tasks</p>
+          <div *ngFor="let task of this.projectService.doneTasks | search : searchText">
+            <app-task [createNewTask]='false' [task]='task'></app-task>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>

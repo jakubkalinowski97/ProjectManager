@@ -21,7 +21,12 @@
           </div>
         </div>
         <div>
-          <span class="last-conversation-title">Last conversations</span>
+          <span class="last-conversation-title">Last conversations
+            <div class="icon-sort">
+              <i class="fas fa-sort-up" (click)="sortConversationsUp()"></i>
+              <i class="fas fa-sort-down" (click)="sortConversationsDown()"></i>
+            </div>
+          </span>
         </div>
         <div class="recent-conversations">
           <div *ngFor="let conversation of this.conversationService.allConversations">

@@ -1,3 +1,46 @@
-<p>
-  task works!
-</p>
+<div class="task" *ngIf="!createNewTask">
+  <div class="header">
+    <div class="title">
+      {{task.name}}
+    </div>
+    <div class="button-container">
+      <span class="button icon-delete"><i class="fas fa-trash-alt" (click)="deleteTask()"></i></span>
+      <span class="button icon-done" *ngIf="!task.isDone"><i class="fas fa-check" (click)="toggleTask()"></i></span>
+      <span class="button icon-done" *ngIf="task.isDone" [ngClass]="{'is-done': task.isDone}"><i class="fas fa-check"
+          (click)="toggleTask()"></i></span>
+    </div>
+  </div>
+  <div class="description">
+    {{task.description}}
+  </div>
+</div>
+<div class="new-task" *ngIf="createNewTask">
+  <div class="new-task-form">
+    <label>
+      <input class="project-input" type="text" [(ngModel)]="newUser" placeholder="User email...">
+    </label>
+    <button class="btn-project" (click)="addNewUser()">Add user to project</button>
+  </div>
+  <form class="new-task-form" [formGroup]='newTask'>
+    <label>
+      <input class="project-input" type="text" formControlName="name" placeholder="Task name...">
+    </label>
+    <label>
+      <input class="project-input" type="text" formControlName="userEmail" placeholder="User email...">
+    </label>
+    <label>
+      <div class="priority">
+        <select place class="styled-select" formControlName="priority">
+          <option value="" disabled selected>Select priority</option>
+          <option value="LOW">Low priority</option>
+          <option value="MEDIUM">Medium priority</option>
+          <option value="HIGH">High priority</option>
+        </select>
+      </div>
+    </label>
+    <label>
+      <textarea class="project-input" type="text" formControlName="description" placeholder="Task description..." rows='4'></textarea>
+    </label>
+    <button class="btn-project" (click)="createTask()" [disabled]="!newTask.valid">Create</button>
+  </form>
+</div>

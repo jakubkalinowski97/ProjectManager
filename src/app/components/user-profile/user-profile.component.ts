@@ -62,7 +62,6 @@ export class UserProfileComponent implements OnInit {
 
   editUser() {
     this.userService.editUser(this.user).subscribe(_ => {
-      console.log(_);
     });
   }
 

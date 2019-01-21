@@ -22,6 +22,7 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { OneProjectComponent } from './components/one-project/one-project.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
   { path: 'newMessages', component: NewMessagesComponent, canActivate: [AuthGuard] },
   { path: 'conversations', component: ConversationComponent, canActivate: [AuthGuard] },
   { path: 'projects', component: ProjectsComponent, canActivate: [AuthGuard] },
+  { path: 'projectBoard/:id', component: MainBoardsComponent, canActivate: [AuthGuard] },
   { path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
     RegistrationComponent,
     NewMessagesComponent,
     ProjectsComponent,
-    OneProjectComponent
+    OneProjectComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

@@ -131,4 +131,28 @@ export class ConversationComponent implements OnInit {
       return;
     });
   }
+
+  sortConversationsUp() {
+    console.log('sortowanoie');
+    console.log(this.conversationService.allConversations.sort((a, b) => {
+      if (a.creationDate > b.creationDate) {
+      return 1;
+      } else if (b.creationDate > a.creationDate) {
+      return -1;
+      } else { return 0; }
+    })
+    );
+  }
+
+  sortConversationsDown() {
+    console.log('sortowanoie');
+    console.log(this.conversationService.allConversations.sort((a, b) => {
+      if (a.creationDate > b.creationDate) {
+      return -1;
+      } else if (b.creationDate > a.creationDate) {
+      return 1;
+      } else { return 0; }
+    })
+    );
+  }
 }

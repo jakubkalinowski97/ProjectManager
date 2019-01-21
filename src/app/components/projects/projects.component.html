@@ -9,7 +9,7 @@
     </div>
     <div class="bottom">
       <app-one-project [tileToCreateProject]='true' ></app-one-project>
-      <app-one-project *ngFor="let project of this.projectService.projects" [project]='project'
+      <app-one-project *ngFor="let project of this.projects" [project]='project'
         [tileToCreateProject]='false'></app-one-project>
     </div>
   </div>
